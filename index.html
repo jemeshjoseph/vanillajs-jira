@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Demo Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="task-section">
+        <h2>To DO</h2>
+        <button
+          class="add-task"
+          type="button"
+          onclick="openAddTaskModal('todo')"
+        >
+          Add Task
+        </button>
+        <div class="section-container"></div>
+      </div>
+      <div class="task-section">
+        <h2>Inprogress</h2>
+        <button
+          class="add-task"
+          type="button"
+          onclick="openAddTaskModal('inprogress')"
+        >
+          Add Task
+        </button>
+        <div class="section-container"></div>
+      </div>
+      <div class="task-section">
+        <h2>Done</h2>
+        <button
+          class="add-task"
+          type="button"
+          onclick="openAddTaskModal('done')"
+        >
+          Add Task
+        </button>
+        <div class="section-container"></div>
+      </div>
+    </div>
+
+    <div id="add-task" class="modal hide">
+      <div class="modal-header">Add Values</div>
+      <div class="modal-content">
+        <form onsubmit="return false">
+          <div>
+            <label for="task">Task: </label>
+            <input type="text" id="task" name="task" />
+          </div>
+
+          <div>
+            <label for="date">Date: </label>
+            <input type="date" id="date" name="date" />
+          </div>
+
+          <div>
+            <label for="assignee">Assignee: </label>
+            <select id="assignee" name="assignee"></select>
+          </div>
+
+          <div>
+            <input type="submit" value="Submit" onclick="submitForm()" />
+            <button type="button" onclick="closeModal()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
